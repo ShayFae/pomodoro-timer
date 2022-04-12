@@ -5,6 +5,11 @@ export default function Timer() {
   const [start, setStart] = useState(false);
   const [start2, setStart2] = useState(false);
   const [start3, setStart3] = useState(false);
+  const [meep, setMeep] = useState(false);
+  const [meep2, setMeep2] = useState(false);
+  const [meep3, setMeep3] = useState(false);
+
+
 
   const [num, setNum] = useState(1500)
   const [num2, setNum2] = useState(600)
@@ -45,15 +50,29 @@ export default function Timer() {
   return (
     <div className="timer">
       <h1>Set Timer</h1>
-      <h3>{num}</h3>
-      <h3>{num2}</h3>
-      <h3>{num3}</h3>
-      <button onClick={() => setStart(true)}>START</button>
-      <button onClick={() => setStart2(true)}>START2</button>
-      <button onClick={() => setStart3(true)}>START3</button>
-      <button onClick={() => setStart(false)}>STOP</button>
-      <button onClick={() => setStart2(false)}>STOP2</button>
-      <button onClick={() => setStart3(false)}>STOP3</button>
+      <button onClick={() => setMeep(true)}>25</button>
+      {meep ? <div> 
+                <h3>{num} </h3> 
+                <button onClick={() => setStart(true)}>START</button>
+                <button onClick={() => setStart(false)}>STOP</button>
+              </div>
+              : null}
+
+      <button onClick={() => setMeep2(true)}>10</button>
+      {meep2 ? <div> 
+                <h3>{num2} </h3> 
+                <button onClick={() => setStart2(true)}>START</button>
+                <button onClick={() => setStart2(false)}>STOP</button>
+              </div>
+              : null}
+
+      <button onClick={() => setMeep3(true)}>5</button>
+      {meep3 ? <div> 
+                <h3>{num3} </h3> 
+                <button onClick={() => setStart3(true)}>START</button>
+                <button onClick={() => setStart3(false)}>STOP</button>
+              </div>
+              : null}
     </div>
   );
 }
