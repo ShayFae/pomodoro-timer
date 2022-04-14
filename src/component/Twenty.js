@@ -10,9 +10,8 @@ export default function Timer() {
       if (start) {
         if(num > 0) {
           setTimeout(() => setNum(prev => --prev), 1000)
-        } else {
+        } 
           return () => clearTimeout(num);
-        }
       }
     }, )
 
@@ -20,8 +19,8 @@ export default function Timer() {
     <div className="timer">
       <h1>Set Timer</h1>
                 <h3>{num} </h3> 
-                <button onClick={() => setStart(true)}>START</button>
-                <button onClick={() => setStart(false)}>STOP</button>
+                <button className="action-button" class="btn btn-outline-success" onClick={() => setStart(true)}>START</button>
+                <button className="action-button" class="btn btn-outline-danger" onClick={() => setStart(false)}>STOP</button>
     </div>
   );
 }

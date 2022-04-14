@@ -1,5 +1,19 @@
 .timer {
   text-align: center;
-  margin: 150px;
+  /* margin: 150px; */
+  /* margin-top: 150px; */
+  border: 1px solid white;
+  height: 88%;
+  width: 100%;
+  left: 0;
+  position: absolute;
 }
+
+button {
+  margin: 10px !important;
+}
+/* 
+.action-button {
+  margin-top: 50px !important;
+} */
 

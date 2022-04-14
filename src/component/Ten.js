@@ -20,8 +20,8 @@ export default function Meep() {
     <div className="timer">
       <h1>Set Timer</h1>
                 <h3>{num} </h3> 
-                <button onClick={() => setStart(true)}>START</button>
-                <button onClick={() => setStart(false)}>STOP</button>
+                <button class="btn btn-outline-success" onClick={() => setStart(true)}>START</button>
+                <button class="btn btn-outline-danger" onClick={() => setStart(false)}>STOP</button>
     </div>
   );
 }
