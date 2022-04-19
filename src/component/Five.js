@@ -1,9 +1,12 @@
 import './Timer.css'
 import { useEffect, useState } from 'react'
+import useSound from 'use-sound';
+import sounds from '../sounds/420504__jfrecords__uprising3.wav';
 
 export default function Meep() {
   const [start, setStart] = useState(false);
   const [num, setNum] = useState(300)
+  const [play] = useSound(sounds)
 
   //TIMER
     useEffect(() =>  {
@@ -17,10 +20,13 @@ export default function Meep() {
 
   return (
     <div className="timer">
-      <h1>Set Timer</h1>
-                <h3>{num}</h3> 
-                <button class="btn btn-outline-success" onClick={() => setStart(true)}>START</button>
-                <button class="btn btn-outline-danger" onClick={() => setStart(false)}>STOP</button>
+      <div className='test'>
+        <h1>Set Timer</h1>
+           <h3>{num}</h3> 
+            <button class="btn btn-outline-success" onClick={() => setStart(true)}>START</button>
+            <button class="btn btn-outline-danger" onClick={() => setStart(false)}>STOP</button>
+            {num === 0 && play()}
+       </div>
     </div>
   );
 }

@@ -1,4 +1,6 @@
 .timer {
+  display: flex;
+  justify-content: center;
   text-align: center;
   /* margin: 150px; */
   /* margin-top: 150px; */
@@ -12,8 +14,19 @@
 button {
   margin: 10px !important;
 }
-/* 
-.action-button {
-  margin-top: 50px !important;
-} */
 
+.test {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 5px solid white;
+  width: 500px;
+  height: 500px;
+  /* padding: 100px; */
+}
+
+
+/* .action-button {
+  margin-top: 50px !important; 
+}  */
