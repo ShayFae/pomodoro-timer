@@ -17,18 +17,24 @@ export default function Meep() {
           } 
           return () => clearTimeout(num);
       }
-    }, )
+    }, [start])
+    console.log('asda', num)
+
+    const test = () => {
+      setNum(300); 
+      setStart(false);
+    }
 
   return (
     <div className="timer">
       <div className='test'>
-      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setNum(300)}/>
+      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => test()}/>
         <h1>Set Timer</h1>      
            <h3>{num}</h3> 
            <div className='stop-start'>
-            <button class="btn btn-success" onClick={() => setStart(true)}>START</button>
-            <button class="btn btn-danger" onClick={() => setStart(false)}>STOP</button>
-            {num === 0 && play()}
+            {start === false && <button class="btn btn-success" onClick={() => setStart(true)}>START</button>}
+            {start === true && <button class="btn btn-danger" onClick={() => setStart(false)}>STOP</button>}
+            {/* {num === 0 && play()} */}
             </div>
        </div>
     </div>

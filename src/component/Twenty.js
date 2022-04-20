@@ -18,6 +18,7 @@ export default function Timer() {
           return () => clearTimeout(num);
       }
     }, )
+    
 
   return (
     <div className="timer">
