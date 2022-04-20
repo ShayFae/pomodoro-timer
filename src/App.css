@@ -1,13 +1,17 @@
 div {
   text-align: center;
-  background-color: black;
-  color: white;
+  background-color: #f4f1ec;
+  color: BLACK;
   /* margin-top: 20px; */
+  
+}
+
+nav {
+  background-color: #669DB3FF;
 }
 
 /* .container {
   border: 10px solid white;
 } */
-
 
 
