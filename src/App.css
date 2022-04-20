@@ -1,9 +1,7 @@
 div {
   text-align: center;
   background-color: #f4f1ec;
-  color: BLACK;
-  /* margin-top: 20px; */
-  
+  color: BLACK;  
 }
 
 nav {
@@ -11,11 +9,10 @@ nav {
 }
 
 h1 {
-  color: #A89C94FF
+  color: #A89C94FF;
 }
 
-/* .container {
-  border: 10px solid white;
-} */
-
-
+.title {
+ color: #f4f1ec;
+  padding: 20px;
+}
