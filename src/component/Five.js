@@ -22,8 +22,7 @@ export default function Meep() {
   return (
     <div className="timer">
       <div className='test'>
-      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow'/>
-        {/* <button></button> */}
+      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setNum(300)}/>
         <h1>Set Timer</h1>      
            <h3>{num}</h3> 
            <div className='stop-start'>

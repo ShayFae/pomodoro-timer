@@ -9,7 +9,6 @@ export default function Timer() {
   const [num, setNum] = useState(1500)
   const [play] = useSound(sounds)
 
-
   //TIMER
     useEffect(() =>  {
       if (start) {
@@ -23,7 +22,7 @@ export default function Timer() {
   return (
     <div className="timer">
       <div className='test'>
-      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow'/>
+      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setNum(300)}/>
         <h1>Set Timer</h1>
           <h3>{num} </h3> 
           <div className='stop-start'>
