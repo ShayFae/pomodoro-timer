@@ -1,11 +1,11 @@
 div {
   text-align: center;
   background-color: #f4f1ec;
-  color: BLACK;  
 }
 
 nav {
   background-color: #669DB3FF;
+  padding-bottom: 10px;
 }
 
 h1 {
@@ -13,6 +13,10 @@ h1 {
 }
 
 .title {
- color: #f4f1ec;
+  color: #f4f1ec;
   padding: 20px;
+}
+
+body {
+  overflow: hidden; 
 }
