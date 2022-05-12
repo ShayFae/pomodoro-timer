@@ -6,50 +6,39 @@ import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export default function Meep() {
   const [start, setStart] = useState(false);
-  const [num, setNum] = useState(300)
   const [play] = useSound(sounds)
-  const [num2, setNum2] = useState([5, 0])
-
-  // const b = {
-  //   minute: num / 60,
-  //   seconds: (num / 60) % 60  
-  // }
-  // setNum2([b.minute, b.seconds])
-  // console.log(b)
-
-  //TIMER
-    useEffect(() =>  {
-      if (start) {
-        if(num > 0) {
-          setTimeout(() => setNum(prev => --prev), 1000)
-          } 
-          return () => clearTimeout(num);
-      }
-    }, )
+  const [minutes, setMinutes] = useState(4)
+  const [seconds, setSeconds] = useState(60)
+  const [seconds2, setSeconds2] = useState(0)
 
       //TIMER
       useEffect(() =>  {
+        // console.log(seconds, minutes)
         if (start) {
-          if(num2 > 0) {
-            setTimeout(() => setNum2(prev => --prev), 1000)
-            } 
-            return () => clearTimeout(num2);
+          if(minutes > 0) {
+            setTimeout(() => setSeconds(prev => --prev), 1000)
+            }
+          if(seconds < 0) {
+            setTimeout(() => setMinutes(prev => prev - 1), 1000)
+            setSeconds(60)
+          }  
+
+          if(minutes == 0 ) {
+            setTimeout(() => setSeconds(prev => --prev), 1000)
+          } 
         }
       }, )
-  
-// console.log('hi', num2)
 
   return (
     <div className="timer">
       <div className='test'>
-      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setNum(301) + setStart(false)}/>
-
-        <h1>Set Timer</h1>      
-           <h3>{num2}</h3> 
+      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setMinutes(4) + setSeconds(60) + setStart(false)}/>
+        <h1>Set Timer</h1>   
+        {minutes == -1 && seconds == 58 ? <h3>0 : {seconds2}</h3> : <h3>{minutes} : {seconds}</h3> }   
            <div className='stop-start'>
-            {start === false && <button class="btn btn-success" onClick={() => setStart(true)}>START</button>}
-            {start === true && <button class="btn btn-danger" onClick={() => setStart(false)}>STOP</button>}
-            {num === 0 && play()}
+              {start === false && <button class="btn btn-success" onClick={() => setStart(true)}>START</button>}
+              {start === true && <button class="btn btn-danger" onClick={() => setStart(false)}>STOP</button>}
+              {minutes == -1 && seconds == 58 && play()}
             </div>
        </div>
     </div>
