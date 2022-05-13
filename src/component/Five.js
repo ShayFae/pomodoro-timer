@@ -7,8 +7,8 @@ import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 export default function Meep() {
   const [start, setStart] = useState(false);
   const [play] = useSound(sounds)
-  const [minutes, setMinutes] = useState(4)
-  const [seconds, setSeconds] = useState(60)
+  const [minutes, setMinutes] = useState(5)
+  const [seconds, setSeconds] = useState(0)
   const [seconds2, setSeconds2] = useState(0)
 
       //TIMER
@@ -32,7 +32,7 @@ export default function Meep() {
   return (
     <div className="timer">
       <div className='test'>
-      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setMinutes(4) + setSeconds(60) + setStart(false)}/>
+      <FontAwesomeIcon icon="arrow-rotate-right" size='2x' className='arrow' onClick={() => setMinutes(5) + setSeconds(0) + setStart(false)}/>
         <h1>Set Timer</h1>   
         {minutes == -1 && seconds == 58 ? <h3>0 : {seconds2}</h3> : <h3>{minutes} : {seconds}</h3> }   
            <div className='stop-start'>
